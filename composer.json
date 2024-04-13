@@ -13,7 +13,8 @@
     "pestphp/pest": "^1.23",
     "yoast/phpunit-polyfills": "^1.0",
     "php-stubs/wordpress-tests-stubs": "^6.3",
-    "php-stubs/wordpress-stubs": "^6.4"
+    "php-stubs/wordpress-stubs": "^6.4",
+    "php-stubs/acf-pro-stubs": "^6.2"
   },
   "config": {
     "allow-plugins": {

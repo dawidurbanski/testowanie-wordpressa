@@ -51,3 +51,9 @@ register_deactivation_hook(
 		'on_plugin_deactivation',
 	)
 );
+
+/**
+ * Include plugin functions files
+ */
+require_once __DIR__ . '/includes/order.php';
+require_once __DIR__ . '/includes/block.php';
