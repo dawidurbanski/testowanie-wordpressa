@@ -6,13 +6,14 @@
   "scripts": {
     "wp-env": "wp-env",
     "init-project": "NODE_ENV=development npm install",
-    "start": "npm run init-project && wp-env start && bash .scripts/mailhog start",
-    "start:debug": "npm run init-project && wp-env start --xdebug=develop,coverage,debug && bash .scripts/mailhog start",
+    "start": "npm run init-project && wp-env start && bash .scripts/mailhog start && npm run after-start",
+    "start:debug": "npm run init-project && wp-env start --xdebug=develop,coverage,debug && bash .scripts/mailhog start && npm run after-start",
     "stop": "wp-env stop && bash .scripts/mailhog stop",
     "clean": "wp-env clean all",
     "composer": "wp-env run cli --env-cwd=wp-content/plugins/testowanie-wordpressa composer",
-    "activate-plugin": "wp-env run cli --env-cwd=wp-content/plugins/testowanie-wordpressa wp plugin activate testowanie-wordpressa",
-    "after-start": "npm run composer install && npm run activate-plugin",
+    "activate-plugin": "wp-env run cli --env-cwd=wp-content/plugins/testowanie-wordpressa wp plugin activate testowanie-wordpressa && npm run acf",
+    "acf": "wp-env run cli wp plugin install advanced-custom-fields --activate",
+    "after-start": "npm run composer install && npm run activate-plugin && wp-env run cli wp plugin delete hello",
     "test": "wp-env run tests-wordpress --env-cwd=wp-content/plugins/testowanie-wordpressa ./vendor/bin/pest -- --configuration phpunit.xml",
     "test:coverage": "wp-env run tests-wordpress --env-cwd=wp-content/plugins/testowanie-wordpressa ./vendor/bin/pest -- --configuration phpunit.xml --coverage --coverage-html coverage"
   },
