@@ -1,0 +1,24 @@
+{
+  "name": "testowanie-wordpressa/testowanie-wordpressa",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "TestingWordPress\\": "src/",
+      "Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.0",
+    "wpreadme2markdown/wp2md": "^4.0",
+    "pestphp/pest": "^1.23",
+    "yoast/phpunit-polyfills": "^1.0",
+    "php-stubs/wordpress-tests-stubs": "^6.3",
+    "php-stubs/wordpress-stubs": "^6.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "pestphp/pest-plugin": true
+    }
+  }
+}
